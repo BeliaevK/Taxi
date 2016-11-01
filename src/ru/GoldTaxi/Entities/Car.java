@@ -10,9 +10,22 @@ public class Car {
     private boolean babySeat;
     private boolean smoking;
     private int carClass;
+    private String carStatus;
     private static final int TYPE_OF_CLASS_ECONOMIC = 0;
     private static final int TYPE_OF_CLASS_BUSYNESS = 1;
-    private boolean carStatus;
+    private static final String TYPE_OF_STATUS_FREE = "Свободен";
+    private static final String TYPE_OF_STATUS_RESERVED = "Занят";
+
+    public Car(String carMark, Driver carDriver, String carNumber, boolean babySeat, boolean smoking, int carClass, String carStatus) {
+        this.carMark = carMark;
+        this.carDriver = carDriver;
+        this.carNumber = carNumber;
+        this.babySeat = babySeat;
+        this.smoking = smoking;
+        this.carClass = carClass;
+        this.setCarStatus(carStatus);
+    }
+
 
     public static int getTypeOfClassEconomic() {
         return TYPE_OF_CLASS_ECONOMIC;
@@ -20,6 +33,14 @@ public class Car {
 
     public static int getTypeOfClassBusyness() {
         return TYPE_OF_CLASS_BUSYNESS;
+    }
+
+    public static String getTypeOfStatusFree() {
+        return TYPE_OF_STATUS_FREE;
+    }
+
+    public static String getTypeOfStatusReserved() {
+        return TYPE_OF_STATUS_RESERVED;
     }
 
     public String getCarMark() {
@@ -70,11 +91,19 @@ public class Car {
         this.carClass = carClass;
     }
 
-    public boolean isCarStatus() {
+    public String getCarStatus() {
         return carStatus;
     }
 
-    public void setCarStatus(boolean carStatus) {
+    public void setCarStatus(String carStatus) {
         this.carStatus = carStatus;
     }
+
+    @Override
+    public String toString() {
+        return this.carMark + ", номер " + this.carNumber + ". Водитель: " + this.carDriver.getName() + ", телефон для связи: " + this.carDriver.getTelephone() + ".";
+    }
 }
+
+
+

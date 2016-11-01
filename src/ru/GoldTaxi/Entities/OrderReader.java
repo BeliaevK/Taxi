@@ -13,14 +13,23 @@ public class OrderReader {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String s = reader.readLine();
         String[] sSplit = s.split("\\|");
-        order = new Order(sSplit[0],sSplit[1],Boolean.parseBoolean(sSplit[2]),Boolean.parseBoolean(sSplit[3]),Integer.parseInt(sSplit[3]));
-        String startPoint = sSplit[0];
-        String endPoint = sSplit[1];
-        boolean babySeat = Boolean.parseBoolean(sSplit[2]);
-        boolean smoking = Boolean.parseBoolean(sSplit[3]);
-        int carClass = Integer.parseInt(sSplit[3]);
+        if (sSplit.length == 2){
+            order = new Order(sSplit[0],sSplit[1]);
+        } else
+        if (sSplit.length == 3){
+            order = new Order(sSplit[0],sSplit[1],Boolean.parseBoolean(sSplit[2]));
+        } else
+        if (sSplit.length == 4){
+            order = new Order(sSplit[0],sSplit[1],Boolean.parseBoolean(sSplit[2]),Boolean.parseBoolean(sSplit[3]));
+        } else
+        if (sSplit.length == 5){
+        order = new Order(sSplit[0],sSplit[1],Boolean.parseBoolean(sSplit[2]),Boolean.parseBoolean(sSplit[3]),
+                Integer.parseInt(sSplit[4]));
+        }
 
-        System.out.println(order);
+
+
+       // System.out.println(order);
         return order;
     }
 }

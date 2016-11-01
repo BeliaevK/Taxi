@@ -8,10 +8,10 @@ import java.util.ArrayList;
  */
 public class main {
     public static void main(String[] args) throws IOException {
-        ArrayList<Car> CarArrayList = Initialization.initCarArray();
+        ArrayList<Car> carArrayList = Initialization.initCarArray();
         while (true) {
             Order order = OrderReader.orderRead();
-            CarSearch.searchFreeCar(CarArrayList, order);
+            CarSearch.searchFreeCar(carArrayList, order);
         }
     }
 }

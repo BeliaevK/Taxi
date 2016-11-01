@@ -1,7 +1,4 @@
 package ru.GoldTaxi.Entities;
-
-import java.util.Date;
-
 /**
  * Created by Scala on 30.10.2016.
  */
@@ -12,6 +9,24 @@ public class Order {
     private boolean needSmoking;
     private int needCarClass;
     private Car carReserver;
+
+    public Order (String startPoint, String endPoint){
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
+    }
+
+    public Order (String startPoint, String endPoint,boolean needBabySeat){
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
+        this.needBabySeat = needBabySeat;
+    }
+
+    public Order (String startPoint, String endPoint,boolean needBabySeat, boolean needSmoking){
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
+        this.needBabySeat = needBabySeat;
+        this.needSmoking = needSmoking;
+    }
 
     public Order (String startPoint, String endPoint, boolean needBabySeat, boolean needSmoking, int needCarClass) {
         this.startPoint = startPoint;
