@@ -10,7 +10,7 @@ public class Order {
     private int needCarClass;
     private Car carReserver;
 
-    public Order (String startPoint, String endPoint){
+/*    public Order (String startPoint, String endPoint){
         this.startPoint = startPoint;
         this.endPoint = endPoint;
     }
@@ -26,7 +26,7 @@ public class Order {
         this.endPoint = endPoint;
         this.needBabySeat = needBabySeat;
         this.needSmoking = needSmoking;
-    }
+    }*/
 
     public Order (String startPoint, String endPoint, boolean needBabySeat, boolean needSmoking, int needCarClass) {
         this.startPoint = startPoint;

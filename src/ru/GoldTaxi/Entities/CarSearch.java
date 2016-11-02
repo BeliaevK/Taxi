@@ -17,12 +17,10 @@ public class CarSearch {
                     }
                 }
                 if (reservedCar != null) {
-                    System.out.println("На ваш заказ назначена: "+reservedCar);
+                    System.out.println("Вам назначена: "+reservedCar);
                 } else {
-                    System.out.println("В данный момент нет подходящего для вас автомобиля, заявка ожидает подходящего, освободившегося автомобиля.");
+                    System.out.println("В данный момент нет подходящего автомобиля, попробуйте позже.");
                 }
-
-
             }
 
             private static boolean compareOrderToCar(Car car, Order order) {
